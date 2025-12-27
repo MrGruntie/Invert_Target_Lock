@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/ow-mods/owml/master/schemas/manifest_schema.json",
   "filename": "invert.dll",
-  "author": "Mr. Gruntie",
+  "author": "MrGruntie",
   "name": "Inverted Target Lines",
   "uniqueName": "MrGruntie.InvertLines",
   "version": "1.0.0",
