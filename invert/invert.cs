@@ -16,16 +16,11 @@ public class invert : ModBehaviour
 	public void Awake()
 	{
 		Instance = this;
-		// You won't be able to access OWML's mod helper in Awake.
-		// So you probably don't want to do anything here.
-		// Use Start() instead.
 	}
 
 	public void Start()
 	{
-		// Starting here, you'll have access to OWML's mod helper.
-		ModHelper.Console.WriteLine($"{nameof(invert)} loaded", MessageType.Success);
-
+		ModHelper.Console.WriteLine("Target Lock Line Inverter loaded", MessageType.Success);
 		new Harmony("MrGruntie.InvertLines").PatchAll(Assembly.GetExecutingAssembly());
 	}
 
@@ -40,13 +35,15 @@ public class invert : ModBehaviour
 
     public static void SetMotionLinesFixed(Vector2 relativeVel, bool invert_x, bool invert_y, UILineRenderer lineX, UILineRenderer lineY)
     {
+        // The original function always reversed the input.
+        // The argument that gets passed seems to be a copy instead of a pointer
+        // so the whole method needs to be recopied to flip it around properly. *shrug*
 		if (!invert_x) {
 			relativeVel.x *= -1f;
 		}
 		if (!invert_y) {
 			relativeVel.y *= -1f;
 		}
-        // relativeVel *= -1f;
         if ((bool)lineX)
         {
             lineX.gameObject.SetActive(value: true);

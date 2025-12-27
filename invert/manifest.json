@@ -4,7 +4,7 @@
   "author": "Mr. Gruntie",
   "name": "Inverted Target Lines",
   "uniqueName": "MrGruntie.InvertLines",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "owmlVersion": "2.15.1",
   "dependencies": []
 }
