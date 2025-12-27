@@ -15,7 +15,7 @@ permissions:
 
 env:
   PROJ_USERNAME: MrGruntie
-  PROJ_NAME: Inverted Target Lines
+  PROJ_NAME: invert
 
 jobs:
   pre_job:
